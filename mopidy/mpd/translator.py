@@ -94,6 +94,15 @@ def track_to_mpd_format(track, position=None, stream_title=None):
     if track.genre:
         result.append(('Genre', track.genre))
 
+    if track.mood:
+        result.append(('Mood', track.mood))
+
+    if track.key:
+        result.append(('Key', track.key))
+
+    if track.bpm:
+        result.append(('Bpm', track.bpm))
+
     if track.disc_no:
         result.append(('Disc', track.disc_no))
 

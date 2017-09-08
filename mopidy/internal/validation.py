@@ -9,16 +9,16 @@ PLAYBACK_STATES = {'paused', 'stopped', 'playing'}
 
 SEARCH_FIELDS = {
     'uri', 'track_name', 'album', 'artist', 'albumartist', 'composer',
-    'performer', 'track_no', 'genre', 'date', 'comment', 'any'}
+    'performer', 'track_no', 'genre', 'mood', 'key', 'bpm', 'date', 'comment', 'any'}
 
 PLAYLIST_FIELDS = {'uri', 'name'}  # TODO: add length and last_modified?
 
 TRACKLIST_FIELDS = {  # TODO: add bitrate, length, disc_no, track_no, modified?
-    'uri', 'name', 'genre', 'date', 'comment', 'musicbrainz_id'}
+    'uri', 'name', 'genre', 'mood', 'key', 'bpm', 'date', 'comment', 'musicbrainz_id'}
 
 DISTINCT_FIELDS = {
     'track', 'artist', 'albumartist', 'album', 'composer', 'performer', 'date',
-    'genre'}
+    'genre', 'mood', 'key', 'bpm'}
 
 
 # TODO: _check_iterable(check, msg, **kwargs) + [check(a) for a in arg]?

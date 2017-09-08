@@ -99,6 +99,9 @@ def convert_tags_to_track(tags):
         tags, Gst.TAG_ALBUM_ARTIST, 'musicbrainz-albumartistid')
 
     track_kwargs['genre'] = '; '.join(tags.get(Gst.TAG_GENRE, []))
+    track_kwargs['mood'] = '; '.join(tags.get(Gst.TAG_MOOD, []))
+    track_kwargs['key'] = '; '.join(tags.get(Gst.TAG_KEY, []))
+    track_kwargs['bpm'] = '; '.join(tags.get(Gst.TAG_BPM, []))
     track_kwargs['name'] = '; '.join(tags.get(Gst.TAG_TITLE, []))
     if not track_kwargs['name']:
         track_kwargs['name'] = '; '.join(tags.get(Gst.TAG_ORGANIZATION, []))

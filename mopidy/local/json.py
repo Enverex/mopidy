@@ -139,6 +139,15 @@ class JsonLibrary(local.Library):
         elif field == 'genre':
             def distinct(track):
                 return {track.genre}
+        elif field == 'mood':
+            def distinct(track):
+                return {track.mood}
+        elif field == 'key':
+            def distinct(track):
+                return {track.key}
+        elif field == 'bpm':
+            def distinct(track):
+                return {track.bpm}
         else:
             return set()
 

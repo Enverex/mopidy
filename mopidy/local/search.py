@@ -58,6 +58,15 @@ def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
             def genre_filter(t):
                 return (t.genre and q == t.genre)
 
+            def mood_filter(t):
+                return (t.genre and q == t.mood)
+
+            def key_filter(t):
+                return (t.genre and q == t.key)
+
+            def bpm_filter(t):
+                return (t.genre and q == t.bpm)
+
             def date_filter(t):
                 return q == t.date
 
@@ -75,6 +84,9 @@ def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
                         track_no_filter(t) or
                         genre_filter(t) or
                         date_filter(t) or
+                        mood_filter(t) or
+                        key_filter(t) or
+                        bpm_filter(t) or
                         comment_filter(t))
 
             if field == 'uri':
@@ -95,6 +107,12 @@ def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
                 tracks = filter(track_no_filter, tracks)
             elif field == 'genre':
                 tracks = filter(genre_filter, tracks)
+            elif field == 'mood':
+                tracks = filter(mood_filter, tracks)
+            elif field == 'key':
+                tracks = filter(key_filter, tracks)
+            elif field == 'bpm':
+                tracks = filter(bpm_filter, tracks)
             elif field == 'date':
                 tracks = filter(date_filter, tracks)
             elif field == 'comment':
@@ -171,6 +189,12 @@ def search(tracks, query=None, limit=100, offset=0, uris=None):
             def genre_filter(t):
                 return bool(t.genre and q in t.genre.lower())
 
+            def mood_filter(t):
+                return bool(t.mood and q in t.mood.lower())
+
+            def key_filter(t):
+                return bool(t.key and q in t.key.lower())
+
             def date_filter(t):
                 return bool(t.date and t.date.startswith(q))
 
@@ -187,6 +211,8 @@ def search(tracks, query=None, limit=100, offset=0, uris=None):
                         performer_filter(t) or
                         track_no_filter(t) or
                         genre_filter(t) or
+                        mood_filter(t) or
+                        key_filter(t) or
                         date_filter(t) or
                         comment_filter(t))
 
@@ -208,6 +234,12 @@ def search(tracks, query=None, limit=100, offset=0, uris=None):
                 tracks = filter(track_no_filter, tracks)
             elif field == 'genre':
                 tracks = filter(genre_filter, tracks)
+            elif field == 'mood':
+                tracks = filter(mood_filter, tracks)
+            elif field == 'key':
+                tracks = filter(key_filter, tracks)
+            elif field == 'bpm':
+                tracks = filter(bpm_filter, tracks)
             elif field == 'date':
                 tracks = filter(date_filter, tracks)
             elif field == 'comment':
