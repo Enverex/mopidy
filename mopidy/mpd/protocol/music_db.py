@@ -18,6 +18,9 @@ _SEARCH_MAPPING = {
     'file': 'uri',
     'filename': 'uri',
     'genre': 'genre',
+    'mood': 'mood',
+    'key': 'key',
+    'bpm': 'bpm',
     'performer': 'performer',
     'title': 'track_name',
     'track': 'track_no'}
@@ -30,6 +33,9 @@ _LIST_MAPPING = {
     'composer': 'composer',
     'date': 'date',
     'genre': 'genre',
+    'mood': 'mood',
+    'key': 'key',
+    'bpm': 'bpm',
     'performer': 'performer'}
 
 _LIST_NAME_MAPPING = {
@@ -40,6 +46,9 @@ _LIST_NAME_MAPPING = {
     'composer': 'Composer',
     'date': 'Date',
     'genre': 'Genre',
+    'mood': 'Mood',
+    'key': 'Key',
+    'bpm': 'Bpm',
     'performer': 'Performer'}
 
 
